@@ -10,11 +10,11 @@ url_product = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_20
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
-        login_link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
+        login_link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
         login_page = LoginPage(browser, login_link)
         login_page.open()
         email = str(time.time()) + "@fakemail.org"
-        password = str(time.time())
+        password = str(time.time()) + "qwerty"
         login_page.register_new_user(email=email, password=password)
         login_page.should_be_authorized_user()
 
